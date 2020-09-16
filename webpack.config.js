@@ -2,15 +2,17 @@
 * @Author: Administrator
 * @Date:   2020-09-16 17:15:29
 * @Last Modified by:   chang__ccge
-* @Last Modified time: 2020-09-16 22:15:26
+* @Last Modified time: 2020-09-17 07:55:52
 */
 const path = require('path')
 const HtmlWebpackPlugin  = require('html-webpack-plugin')
 const ExtractTextPlugin =require('extract-text-webpack-plugin')
+const { CleanWebpackPlugin }= require('clean-webpack-plugin')
 const webpack = require('webpack')
 module.exports={
 	entry:'./src/app.jsx',
 	devServer:{
+		open:true
 	},
 	module:{
 		rules:[
@@ -74,6 +76,8 @@ module.exports={
 	new webpack.optimize.CommonsChunkPlugin({
 		name:'common',
 		filename:'js/base.js'
+	}),new CleanWebpackPlugin({
+		cleanAfterEveryBuildPatterns:['dist']
 	})],
 	output:{
 		path:path.resolve(__dirname,'dist'),
