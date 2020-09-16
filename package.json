@@ -1,0 +1,8 @@
+{
+  "name": "admin-v2-fe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@gitee.com:happy_mmmal/admin-v2-fe.git",
+  "author": "chang__ccge <b449568227@gmail.com>",
+  "license": "MIT"
+}
