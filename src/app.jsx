@@ -4,15 +4,24 @@
 * @Last Modified by:   chang__ccge
 * @Last Modified time: 2020-09-16 19:03:10
 */
-import React from 'react';
+import React,{ Component,Fragment} from 'react';
 import ReactDom from 'react-dom';
-import 'font-awesome/css/font-awesome.min.css'
-import './index.css'
-import './index.scss'
+import {BrowserRouter as Router,Switch,Route,Link,Redirect} from 'react-router-dom'
+import Home from 'page/home/index.jsx'
+import Layout from 'component/layout/index.jsx'
+class App extends Component {
+	render(){
+		return (
+			<Router>
+				<Layout>
+					<Switch>
+						<Route exact path="/" component={ Home }></Route>
+					</Switch>
+				</Layout>
+			</Router>
+			)
+	}
+}
 
-ReactDom.render(
-<div>
-	<i className="fa fa-address-book"></i>
-	<h1>hello world</h1>
-</div>
-,document.getElementById('app'))
+
+ReactDom.render(<App />,document.getElementById('app'))

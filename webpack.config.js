@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2020-09-16 17:15:29
 * @Last Modified by:   chang__ccge
-* @Last Modified time: 2020-09-17 07:55:52
+* @Last Modified time: 2020-09-17 22:10:13
 */
 const path = require('path')
 const HtmlWebpackPlugin  = require('html-webpack-plugin')
@@ -12,7 +12,16 @@ const webpack = require('webpack')
 module.exports={
 	entry:'./src/app.jsx',
 	devServer:{
-		open:true
+		open:true,
+		historyApiFallback:{
+			index:'/dist/index.html'
+		}
+	},
+	resolve:{
+		alias:{
+			page:path.resolve(__dirname,'src/page'),
+			component:path.resolve(__dirname,'src/component')
+		}
 	},
 	module:{
 		rules:[
@@ -71,7 +80,8 @@ module.exports={
 	]
 },
 	plugins:[new HtmlWebpackPlugin({
-		template:'./src/index.html'
+		template:'./src/index.html',
+		favicon:'./favicon.ico'
 	}),new ExtractTextPlugin('css/[name].css'),
 	new webpack.optimize.CommonsChunkPlugin({
 		name:'common',
