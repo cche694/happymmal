@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2020-09-16 17:15:29
 * @Last Modified by:   chang__ccge
-* @Last Modified time: 2020-09-17 22:10:13
+* @Last Modified time: 2020-09-19 17:35:50
 */
 const path = require('path')
 const HtmlWebpackPlugin  = require('html-webpack-plugin')
@@ -11,16 +11,29 @@ const { CleanWebpackPlugin }= require('clean-webpack-plugin')
 const webpack = require('webpack')
 module.exports={
 	entry:'./src/app.jsx',
+	devtool:'cheap-module-eval-source-map',
 	devServer:{
 		open:true,
 		historyApiFallback:{
 			index:'/dist/index.html'
+		},
+		proxy:{
+			'/manage':{
+				target:'http://admintest.happymmall.com',
+				changeOrigin:true
+			},
+			'/user/logout.do':{
+				target:'http://admintest.happymmall.com',
+				changeOrigin:true
+			}
 		}
 	},
 	resolve:{
 		alias:{
 			page:path.resolve(__dirname,'src/page'),
-			component:path.resolve(__dirname,'src/component')
+			component:path.resolve(__dirname,'src/component'),
+			util:path.resolve(__dirname,'src/util'),
+			service:path.resolve(__dirname,'src/service')
 		}
 	},
 	module:{

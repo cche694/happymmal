@@ -9,15 +9,28 @@ import ReactDom from 'react-dom';
 import {BrowserRouter as Router,Switch,Route,Link,Redirect} from 'react-router-dom'
 import Home from 'page/home/index.jsx'
 import Layout from 'component/layout/index.jsx'
+import Login from "page/login/index.jsx"
+import ErrorPage from 'page/error/index.jsx'
+import UserList from 'page/user/index.jsx'
 class App extends Component {
 	render(){
+		let LayoutRouter=(
+			<Layout>
+				<Switch>
+					<Route exact path="/" component={ Home }></Route>
+					<Route path="/user/index" component={ UserList }></Route>
+					<Redirect exact from='/user' to='/user/index'></Redirect>
+					<Route component={ ErrorPage }></Route>
+				</Switch>
+			</Layout>
+			)
+		
 		return (
 			<Router>
-				<Layout>
-					<Switch>
-						<Route exact path="/" component={ Home }></Route>
-					</Switch>
-				</Layout>
+				<Switch>
+					<Route path="/login" component={Login}></Route>
+					<Route path="/" render={(props)=>{return LayoutRouter}}></Route>
+				</Switch>
 			</Router>
 			)
 	}

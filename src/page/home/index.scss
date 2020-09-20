@@ -1,0 +1,37 @@
+/*
+* @Author: chang__ccge
+* @Date:   2020-09-17 12:58:26
+* @Last Modified by:   chang__ccge
+* @Last Modified time: 2020-09-19 20:40:00
+*/
+.color-box{
+	display: block;
+	height: 250px;
+	padding: 20px,0;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	opacity: 0.9;
+	transition:all 0.5s;
+	&:hover{
+		text-decoration: none;
+		color:#555;
+		opacity:1;
+		transform: scale(1.1);
+	}
+	&:focus{
+		text-decoration: none;
+	}
+	.count{
+		font-size: 50px;
+		height: 125px;
+		line-height: 125px;
+		text-align: center;
+	}
+	.desc{
+		font-size: 26px;
+		text-align: center;
+		.fa{
+			margin-right: 10px
+		}
+	}
+}
