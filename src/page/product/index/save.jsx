@@ -34,7 +34,10 @@ class ProductSave extends Component {
 		//通过id过来的数据
 		if(this.state.id){
 			_product.getProduct(this.state.id).then(res=>{
-				console.log(res)
+				console.log(res.subImages)
+				if(!res.subImages){
+					res.subImages=''
+				}
 					let images = res.subImages.split(',');
 						res.subImages = images.map((imgUri) => {
 							return {
