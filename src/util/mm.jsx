@@ -1,3 +1,4 @@
+import React from 'react'
 class MUtil{
 		request(param){
 			return new Promise((resolve,reject)=>{
@@ -36,8 +37,11 @@ class MUtil{
 				 result =queryString.match(reg);
 			return result ? decodeURIComponent(result[2]):null
 		}
+		successTips(msg){
+			alert(msg||'成功啦~~~')
+		}
 		errorTips(msg){
-			alert(msg)||'好像哪里不对呢~'
+			alert(msg||'好像哪里不对呢~')
 		}
 
 		setStorage(name,data){
@@ -64,6 +68,7 @@ class MUtil{
 		removeStorage(name){
 			window.localStorage.removeItem(name)
 		}
+
 }
 
 
