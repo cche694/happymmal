@@ -116,7 +116,7 @@ class CategorySelector extends Component {
 			      </select>
 			      { this.state.secondCategoryList.length >0 ?
 					  (<select type="text"
-					  readOnly={this.props.readOnly}
+						readOnly={this.props.readOnly}
 			      		className="form-control cat-select" 
 						  placeholder='请输入商品描述'
 						  value={this.state.secondCategoryId}
