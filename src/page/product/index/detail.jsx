@@ -57,16 +57,16 @@ class ProductDetail extends Component {
 			<div id="page-wrapper">
 				<PageTitle title='商品详情'/>
 				<div className="form-horizontal">
-					  <div className="form-group">
+					  <div className="form-group ">
 					    <label htmlFor="inputEmail3" className="col-md-2 control-label">商品名称</label>
 					    <div className="col-md-5">
-                            <p className="from-control">{this.state.name}</p>
+                            <p className="from-control horifix">{this.state.name}</p>
 					    </div>
 					  </div>
-					  <div className="form-group">
+					  <div className="form-group ">
 					    <label htmlFor="inputPassword3" className="col-md-2 control-label">商品描述</label>
 					    <div className="col-md-5">
-                        <p className="from-control">{this.state.subtitle}</p>
+                        <p className="from-control horifix">{this.state.subtitle}</p>
 					    </div>
 					  </div>
 					  {/* 选择品类组件 */}

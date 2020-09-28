@@ -5,7 +5,7 @@ import MUtil from "util/mm.jsx";
 import TableList from "util/table-list/index.jsx";
 import Product from "service/product-service.jsx";
 import { Link } from "react-router-dom";
-import './add.scss'
+import "./add.scss";
 const _mm = new MUtil();
 const _product = new Product();
 
