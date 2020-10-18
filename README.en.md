@@ -8,9 +8,9 @@ Software architecture description
 
 #### Installation
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1. node.js
+2. yarn install
+3. yarn run start
 
 #### Instructions
 
